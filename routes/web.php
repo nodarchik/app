@@ -15,6 +15,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 // All Listings
-Route::get('/', [ListingController::class, 'listings']);
+Route::get('/', [ListingController::class, 'create']);
 // Show Create Form
-Route::get('/create', [ListingController::class, 'create']);
+Route::get('/listings', [ListingController::class, 'listings']);
+// Store Listing Data
+Route::post('/store',[ListingController::class, 'store']);

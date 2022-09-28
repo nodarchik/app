@@ -18,7 +18,8 @@
 <div class="right">
     <div class="right__add">Add a User</div>
     <div class="right__info">Type in your info</div>
-    <form method="post" action="/listings" class="right__form">
+    <form method="post" action="/store" class="right__form">
+        @csrf
         <input class="form__name" type="text" name="name" placeholder="Name">
         @error('name')
         <p>{{$message}}</p>
@@ -40,15 +41,6 @@
         @enderror
         <button class="form__button" type="submit">SAVE</button>
     </form>
-    <h2>
-        {{$listings['name']}}
-    </h2>
-    <p>
-        {{$listings['country']}}
-    </p>
-    <p>
-        {{$listings['date']}}
-    </p>
 </div>
 </body>
 </html>

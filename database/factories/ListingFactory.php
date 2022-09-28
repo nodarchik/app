@@ -14,7 +14,9 @@ class ListingFactory extends Factory
     public function definition()
     {
         return [
-//
+            'name'=>$this->faker->sentence,
+            'country'=>'GEORGIA',
+            'date'=>$this->faker->date()
         ];
     }
 }

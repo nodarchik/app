@@ -11,13 +11,13 @@
 @unless(count($listings)==0)
 @foreach($listings as $listing)
     <h2>
-        {{$listings['name']}}
+        {{$listing['name']}}
     </h2>
     <p>
-        {{$listings['country']}}
+        {{$listing['country']}}
     </p>
     <p>
-        {{$listings['date']}}
+        {{$listing['date']}}
     </p>
 @endforeach
 @else

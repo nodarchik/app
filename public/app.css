@@ -206,3 +206,8 @@
     text-align: center;
     justify-content: center;
 }
+@media (orientation: landscape){
+    body{
+        color: black;
+    }
+}

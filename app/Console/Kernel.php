@@ -2,8 +2,11 @@
 
 namespace App\Console;
 
+use App\Models\Listing;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
+use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\DB;
 
 class Kernel extends ConsoleKernel
 {
@@ -15,7 +18,10 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')->hourly();
+        $schedule->call(function () {
+            $minutes  = Carbon::now()->subMinutes( 5 );
+            Listing::where('created_at', '<=', $minutes)->delete();
+        })->everyMinute();
     }
 
     /**

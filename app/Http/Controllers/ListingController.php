@@ -21,7 +21,7 @@ class ListingController extends Controller
     public function store(Request $request){
         $formFields = $request->validate([
             'name'=>'required|min:5',
-            'country'=>'required',
+            'country'=>'required|in:georgia,usa,uk,germany,italy',
             'date'=>'required|date|date_format:Y-m-d|after:start_at|before:-18 years'
         ]);
         Listing::create($formFields);
